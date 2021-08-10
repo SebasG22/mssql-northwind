@@ -4,15 +4,11 @@ FROM mcr.microsoft.com/mssql/server:2017-latest
 # Developer tools      #
 ########################
 
-# install zsh and oh-my-zsh
-RUN apt update && apt install -y zsh wget git \
-  && sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh-O -)" \
-  && git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions \
-  && echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc \
-  && echo "ZSH_THEME=af-magic" >> ~/.zshrc
+# install wget 
+RUN apt update && apt install -y wget 
 
 # install dev tools
-RUN apt install -y vim tmux
+RUN apt install -y vim
 
 ########################
 # Configure SQL Server #

@@ -8,8 +8,7 @@ docker build -t sql-server:2017 .
 docker run \
   -d \
   --name "${CONTAINER_NAME}" \
-  -v "$( pwd )/sql-server-data:/opt/sql-server-data" \
   sql-server:2017
 
-docker exec -it "${CONTAINER_NAME}" zsh
+docker exec -it "${CONTAINER_NAME}" bash
 

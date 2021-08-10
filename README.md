@@ -19,3 +19,8 @@ Login to SQL Server shell:
 ```bash
 sqlcmd -S localhost -U sa -P SQLServer2017
 ```
+
+List the databases:
+```bash
+ select name from sys.sysdatabases
+```
